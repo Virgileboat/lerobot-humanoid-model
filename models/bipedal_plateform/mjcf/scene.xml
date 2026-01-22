@@ -1,0 +1,15 @@
+<mujoco model="scene">
+  <compiler inertiafromgeom="true"/>
+  <option timestep="0.002" gravity="0 0 -9.81"/>
+<default>
+  <geom contype="0" conaffinity="0"/>
+</default>
+
+  <include file="robot.xml"/>
+
+  <worldbody>
+    <light pos="0 0 5"/>
+    <geom name="floor" type="plane" size="10 10 0.1" contype="1" conaffinity="1" rgba="0.2 0.2 0.2 1"/>
+  </worldbody>
+</mujoco>
+
