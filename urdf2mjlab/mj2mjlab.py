@@ -187,7 +187,7 @@ def make_mjlab_xml(in_path: Path, out_path: Path):
 # -------------------------------------------------
 
 if __name__ == "__main__":
-    IN  = Path("mjcf/robot.xml")
-    OUT = Path("mjcf/robot_mjlab.xml")
+    IN  = Path("robot.xml")
+    OUT = Path("robot_mjlab.xml")
 
     make_mjlab_xml(IN, OUT)
