@@ -1,0 +1,248 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="lerobot_humanoid_12dof">
+  <asset>
+    <mesh name="torso22" content_type="model/stl" file="assets/torso22.stl" />
+    <mesh name="robstrideo0" content_type="model/stl" file="assets/robstrideo0.stl" />
+    <mesh name="torso12" content_type="model/stl" file="assets/torso12.stl" />
+    <mesh name="hipz12" content_type="model/stl" file="assets/hipz12.stl" />
+    <mesh name="robstride02" content_type="model/stl" file="assets/robstride02.stl" />
+    <mesh name="hipz22" content_type="model/stl" file="assets/hipz22.stl" />
+    <mesh name="hipxy" content_type="model/stl" file="assets/hipxy.stl" />
+    <mesh name="knee_rod22" content_type="model/stl" file="assets/knee_rod22.stl" />
+    <mesh name="robstrideo3" content_type="model/stl" file="assets/robstrideo3.stl" />
+    <mesh name="knee_rod12" content_type="model/stl" file="assets/knee_rod12.stl" />
+    <mesh name="femur_22" content_type="model/stl" file="assets/femur_22.stl" />
+    <mesh name="femur_12" content_type="model/stl" file="assets/femur_12.stl" />
+    <mesh name="hat_femur" content_type="model/stl" file="assets/hat_femur.stl" />
+    <mesh name="part_3" content_type="model/stl" file="assets/part_3.stl" />
+    <mesh name="rmdx43" content_type="model/stl" file="assets/rmdx43.stl" />
+    <mesh name="tibias22" content_type="model/stl" file="assets/tibias22.stl" />
+    <mesh name="actuation_ankle" content_type="model/stl" file="assets/actuation_ankle.stl" />
+    <mesh name="tibias12" content_type="model/stl" file="assets/tibias12.stl" />
+    <mesh name="ujoint" content_type="model/stl" file="assets/ujoint.stl" />
+    <mesh name="spacer_ujoint" content_type="model/stl" file="assets/spacer_ujoint.stl" />
+    <mesh name="hat_small" content_type="model/stl" file="assets/hat_small.stl" />
+    <mesh name="foot" content_type="model/stl" file="assets/foot.stl" />
+    <mesh name="hipz22_sym" content_type="model/stl" file="assets/hipz22_sym.stl" />
+    <mesh name="hipz12_sym" content_type="model/stl" file="assets/hipz12_sym.stl" />
+    <mesh name="hipxy_sym" content_type="model/stl" file="assets/hipxy_sym.stl" />
+    <mesh name="knee_rod22_sym" content_type="model/stl" file="assets/knee_rod22_sym.stl" />
+    <mesh name="femur_12_sym" content_type="model/stl" file="assets/femur_12_sym.stl" />
+    <mesh name="femur_22_sym" content_type="model/stl" file="assets/femur_22_sym.stl" />
+    <mesh name="knee_rod12_sym" content_type="model/stl" file="assets/knee_rod12_sym.stl" />
+    <mesh name="tibias12_sym" content_type="model/stl" file="assets/tibias12_sym.stl" />
+    <mesh name="tibias22_sym" content_type="model/stl" file="assets/tibias22_sym.stl" />
+    <mesh name="torso_meshe" content_type="model/stl" file="assets/torso_meshe.stl" />
+    <mesh name="shoulder1_part" content_type="model/stl" file="assets/shoulder1_part.stl" />
+    <mesh name="shoulder2_part" content_type="model/stl" file="assets/shoulder2_part.stl" />
+    <mesh name="bearing_holder_upperbody" content_type="model/stl" file="assets/bearing_holder_upperbody.stl" />
+    <mesh name="shoulder3_part" content_type="model/stl" file="assets/shoulder3_part.stl" />
+    <mesh name="forarm_part" content_type="model/stl" file="assets/forarm_part.stl" />
+    <mesh name="torso_pperbody_part" content_type="model/stl" file="assets/torso_pperbody_part.stl" />
+  </asset>
+
+  <compiler angle="radian" meshdir="assets" autolimits="true" />
+
+  <default>
+    <default class="lerobot">
+      <default class="visual">
+        <geom group="2" type="mesh" density="0" material="silver" contype="0" conaffinity="0" />
+      </default>
+      <default class="collision">
+        <geom group="3" rgba=".2 .6 .2 .3" type="capsule" contype="1" conaffinity="1" />
+        <default class="foot_capsule">
+          <geom type="capsule" size="0.01" />
+        </default>
+      </default>
+      <site group="5" rgba="1 0 0 1" />
+    </default>
+  </default>
+
+  <worldbody>
+    <body name="base" pos="0 0 0.72" childclass="lerobot">
+      <light pos="0 0 2" mode="trackcom" />
+      <camera name="tracking" pos="1.734 -1.135 .35" xyaxes="0.552 0.834 -0.000 -0.170 0.112 0.979" mode="trackcom" />
+      <inertial pos="0 0 0" mass="5.0" diaginertia="0.05 0.05 0.02" />
+      <freejoint name="floating_base_joint" />
+
+      
+      <geom name="torso_collision" class="collision" size="0.1" fromto="0 0 -0.05 0 0 0.15" />
+
+      
+      <site name="imu_in_base" size="0.01" pos="0 0 0" />
+
+      
+      <body name="right_hip_z_link" pos="-0.000819037 -0.133159 0.04164" quat="0.821909 0.0571232 0.0414079 -0.565233">
+        <inertial pos="-0.0179437 -0.0274254 -0.0837243" quat="0.401109 0.424615 -0.783452 0.212171" mass="0.794013" diaginertia="0.00115064 0.000967835 0.000726741" />
+        <joint name="right_hip_z_joint" pos="0 0 0" axis="0 0 1" range="-1.57 1.57" />
+        <geom name="right_hip_z_collision" class="collision" size="0.05" fromto="0 0 -0.02 0 0 -0.1" />
+
+        <body name="right_hip_x_link" pos="-0.01897 -0.0289 -0.09689" quat="0.388857 0.132751 0.0879726 -0.907429">
+          <inertial pos="0.00476547 -0.00266343 -0.0607297" quat="0.916918 -0.328471 -0.0265972 0.225082" mass="0.241618" diaginertia="0.000514846 0.000474201 0.00039973" />
+          <joint name="right_hip_x_joint" pos="0 0 0" axis="0 0 1" range="-0.52 2.97" />
+          <geom name="right_hip_x_collision" class="collision" size="0.04" fromto="0 0 0 0 0 -0.1" />
+
+          <body name="right_hip_y_link" pos="0.012638 -0.0276823 -0.112055" quat="0.3075 0.0287184 0.729949 -0.609748">
+            <inertial pos="0.0501976 0.0785779 -0.0353813" quat="0.64331 0.334215 -0.585819 0.362311" mass="2.5804" diaginertia="0.0237789 0.0223377 0.0035913" />
+            <joint name="right_hip_y_joint" pos="0 0 0" axis="0 0 1" range="-2.53 2.88" />
+            <geom name="right_thigh_collision" class="collision" size="0.055" fromto="0.05 0.1 -0.03 0.1 0.25 -0.03" />
+
+            <body name="right_knee_link" pos="0.17 0.294449 -0.0305" quat="1.26691e-06 0.954863 -0.297046 -3.94118e-07">
+              <inertial pos="-0.0765467 -0.0486737 6.35117e-05" quat="-0.214439 0.670059 0.142077 0.696313" mass="0.593267" diaginertia="0.00177007 0.00173888 0.000242106" />
+              <joint name="right_knee_joint" pos="0 0 0" axis="0 0 1" range="-0.087 2.88" />
+              <geom name="right_shin_collision" class="collision" size="0.04" fromto="-0.05 0 0 -0.2 -0.13 0" />
+
+              <body name="right_ankle_y_link" pos="-0.211522 -0.151191 0.02" quat="1.10817e-06 0.835222 0.549913 7.29622e-07">
+                <inertial pos="-1.62086e-08 -0.000727483 0.02" mass="0.0168168" diaginertia="5.19458e-06 4.86353e-06 8.35665e-07" />
+                <joint name="right_ankle_y_joint" pos="0 0 0" axis="0 0 1" range="-0.87 0.52" />
+                <geom name="right_ankle_y_collision" class="collision" size="0.02" fromto="0 0 0 0 -0.015 0" />
+
+                <body name="right_ankle_x_link" pos="0 -0.01594 0.02" quat="0.499998 0.5 0.5 -0.500002">
+                  <inertial pos="8.52312e-09 -0.0138418 -0.052232" quat="0.705627 0.0421767 -0.042203 0.706067" mass="0.122498" diaginertia="0.000163602 0.000163413 6.9433e-05" />
+                  <joint name="right_ankle_x_joint" pos="0 0 0" axis="0 0 1" range="-0.26 0.26" />
+                  <site name="right_foot" rgba="1 0 0 1" pos="0.04 -0.035 -0.055" />
+                  
+                  <geom name="right_foot1_collision" class="foot_capsule" fromto="0.08 -0.03 -0.05 0.02 -0.03 -0.05" />
+                  <geom name="right_foot2_collision" class="foot_capsule" fromto="-0.04 -0.035 -0.05 0.10 -0.035 -0.05" />
+                  <geom name="right_foot3_collision" class="foot_capsule" fromto="0.08 -0.04 -0.05 0.02 -0.04 -0.05" />
+                <geom pos="0 -0.035 -0.0385" quat="0.499998 -0.5 -0.5 -0.500002" type="mesh" rgba="1 0 0 1" mesh="hat_small" class="visual" />
+                  <geom pos="0 -0.035 -0.0385" quat="0.499998 -0.5 -0.5 -0.500002" type="mesh" rgba="0.301961 0.301961 0.301961 1" mesh="foot" contype="1" conaffinity="1" class="visual" />
+                </body>
+              <geom pos="0 0 0.02" quat="9.38184e-07 0.707105 9.38187e-07 -0.707108" type="mesh" rgba="1 0 0 1" mesh="ujoint" class="visual" />
+                <geom pos="0 0 0.02" quat="0.71462 0 -0.699512 0" type="mesh" rgba="0.917647 0.917647 0.917647 1" mesh="spacer_ujoint" class="visual" />
+                <geom pos="0 0 0.0195" quat="9.38184e-07 0.707105 9.38187e-07 -0.707108" type="mesh" rgba="1 0 0 1" mesh="part_3" class="visual" />
+                <geom pos="0 0 0.0205" quat="9.38184e-07 -0.707105 -9.38187e-07 -0.707108" type="mesh" rgba="1 0 0 1" mesh="part_3" class="visual" />
+                <geom pos="0 5.64895e-06 0.02" quat="9.45034e-07 0.71227 9.31284e-07 -0.701906" type="mesh" rgba="0.917647 0.917647 0.917647 1" mesh="spacer_ujoint" class="visual" />
+                </body>
+            <geom pos="-0.2967 0.369726 0.019" quat="0.616798 0.6168 -0.345774 -0.345773" type="mesh" rgba="0.301961 0.301961 0.301961 1" mesh="rmdx43" class="visual" />
+              <geom pos="-0.221803 -0.135659 0.019" quat="0.616798 -0.6168 0.345774 -0.345773" type="mesh" rgba="1 0 0 1" mesh="tibias22" class="visual" />
+              <geom pos="-0.0303217 0.125625 -0.019" quat="0.706277 0.706279 -0.0342294 -0.0342292" type="mesh" rgba="0.917647 0.917647 0.917647 1" mesh="actuation_ankle" class="visual" />
+              <geom pos="-0.341913 0.342073 0.006" quat="0.616798 0.6168 -0.345774 -0.345773" type="mesh" rgba="0.301961 0.301961 0.301961 1" mesh="rmdx43" class="visual" />
+              <geom pos="-0.221803 -0.135659 0.019" quat="0.616798 -0.6168 0.345774 -0.345773" type="mesh" rgba="1 0 0 1" mesh="tibias12" class="visual" />
+              <geom pos="-0.105319 -0.208585 0.019" quat="0.706277 -0.706279 0.0342294 -0.0342292" type="mesh" rgba="0.917647 0.917647 0.917647 1" mesh="actuation_ankle" class="visual" />
+              </body>
+          <geom pos="0.210506 0.184547 -0.0305" quat="0.612371 0.612373 -0.353555 -0.353553" type="mesh" rgba="0.917647 0.917647 0.917647 1" mesh="knee_rod22" class="visual" />
+            <geom pos="-0.437806 0.570998 -0.07" quat="0.683011 -0.683014 0.183013 -0.183012" type="mesh" rgba="0.301961 0.301961 0.301961 1" mesh="robstrideo3" class="visual" />
+            <geom pos="0.210506 0.184547 -0.0305" quat="0.612371 0.612373 -0.353555 -0.353553" type="mesh" rgba="0.917647 0.917647 0.917647 1" mesh="knee_rod12" class="visual" />
+            <geom pos="0.17 0.294449 -0.0305" quat="0.683011 0.683014 -0.183013 -0.183012" type="mesh" rgba="1 0 0 1" mesh="femur_22" contype="1" conaffinity="1" class="visual" />
+            <geom pos="0.17 0.294449 -0.0305" quat="0.683011 0.683014 -0.183013 -0.183012" type="mesh" rgba="1 0 0 1" mesh="femur_12" contype="1" conaffinity="1" class="visual" />
+            <geom pos="0.17 0.294449 -0.0305" quat="0.683011 0.683014 -0.183013 -0.183012" type="mesh" rgba="1 0 0 1" mesh="hat_femur" class="visual" />
+            <geom pos="0 0 -0.0938" quat="0.183014 -0.683011 0.183014 0.683014" type="mesh" rgba="1 0 0 1" mesh="part_3" class="visual" />
+            <geom pos="-0.495806 0.470539 -0.0275" quat="0.683011 -0.683014 0.183013 -0.183012" type="mesh" rgba="0.301961 0.301961 0.301961 1" mesh="robstrideo3" class="visual" />
+            </body>
+        <geom type="mesh" rgba="1 0 0 1" mesh="hipxy" class="visual" />
+          </body>
+      <geom pos="0 0 -0.1" quat="1.32679e-06 -1 0 0" type="mesh" rgba="1 0 0 1" mesh="hipz12" class="visual" />
+        <geom pos="-0.575896 0.0494047 -0.172196" quat="0.792907 -0.60316 -0.052417 -0.0689069" type="mesh" rgba="0.301961 0.301961 0.301961 1" mesh="robstride02" class="visual" />
+        <geom pos="0 0 -0.1" quat="1.32679e-06 -1 0 0" type="mesh" rgba="1 0 0 1" mesh="hipz22" class="visual" />
+        </body>
+
+      
+      <body name="left_hip_z_link" pos="-0.000819037 0.13316 0.04164" quat="0.826606 -0.0574677 0.0409287 0.558341">
+        <inertial pos="-0.0179432 0.0274245 -0.0837272" quat="0.424685 0.401162 -0.212175 0.783386" mass="0.794016" diaginertia="0.0011506 0.000967878 0.000726822" />
+        <joint name="left_hip_z_joint" pos="0 0 0" axis="0 0 1" range="-1.57 1.57" />
+        <geom name="left_hip_z_collision" class="collision" size="0.05" fromto="0 0 -0.02 0 0 -0.1" />
+
+        <body name="left_hip_x_link" pos="-0.01897 0.0289 -0.09689" quat="0.379002 -0.131789 0.0894063 0.91159">
+          <inertial pos="0.0047654 0.00266393 -0.0607296" quat="0.916914 0.328483 -0.0266015 -0.225077" mass="0.241619" diaginertia="0.000514848 0.000474202 0.000399736" />
+          <joint name="left_hip_x_joint" pos="0 0 0" axis="0 0 1" range="-2.97 0.52" />
+          <geom name="left_hip_x_collision" class="collision" size="0.04" fromto="0 0 0 0 0 -0.1" />
+
+          <body name="left_hip_y_link" pos="0.012638 0.0276823 -0.112055" quat="-0.0382843 0.339833 0.646657 0.681823">
+            <inertial pos="-0.0431321 -0.0830741 -0.0353867" quat="0.584181 0.376186 -0.634805 0.337993" mass="2.5804" diaginertia="0.0240047 0.0225643 0.00359599" />
+            <joint name="left_hip_y_joint" pos="0 0 0" axis="0 0 1" range="-2.53 2.88" />
+            <geom name="left_thigh_collision" class="collision" size="0.055" fromto="-0.05 -0.1 -0.03 -0.1 -0.25 -0.03" />
+
+            <body name="left_knee_link" pos="-0.17 -0.294449 -0.0305" quat="0.766698 0 0 -0.642008">
+              <inertial pos="0.0013467 -0.0907957 -1.51262e-05" quat="0.517853 0.46831 -0.499624 0.512728" mass="0.593266" diaginertia="0.001766 0.00173991 0.000234541" />
+              <joint name="left_knee_joint" pos="0 0 0" axis="0 0 1" range="-0.087 2.88" />
+              <geom name="left_shin_collision" class="collision" size="0.04" fromto="0.05 0 0 0 -0.2 0" />
+
+              <body name="left_ankle_y_link" pos="0 -0.26 -0.02" quat="0.87107 0 0 -0.491159">
+                <inertial pos="1.62086e-08 -0.000727483 0.02" mass="0.0168168" diaginertia="5.19458e-06 4.86353e-06 8.35665e-07" />
+                <joint name="left_ankle_y_joint" pos="0 0 0" axis="0 0 1" range="-0.87 0.52" />
+                <geom name="left_ankle_y_collision" class="collision" size="0.02" fromto="0 0 0 0 -0.015 0" />
+
+                <body name="left_ankle_x_link" pos="0 -0.01594 0.02" quat="0.50166 0.501662 -0.498332 0.498334">
+                  <inertial pos="8.52312e-09 -0.0138418 -0.052232" quat="0.705627 0.0421767 -0.042203 0.706067" mass="0.122498" diaginertia="0.000163602 0.000163413 6.9433e-05" />
+                  <joint name="left_ankle_x_joint" pos="0 0 0" axis="0 0 1" range="-0.26 0.26" />
+                  <site name="left_foot" rgba="2 0 0 1" pos="0.04 -0.035 -0.055" />
+                  
+                  <geom name="left_foot1_collision" class="foot_capsule" fromto="0.08 -0.03 -0.05 0.02 -0.03 -0.05" />
+                  <geom name="left_foot2_collision" class="foot_capsule" fromto="-0.04 -0.035 -0.05 0.10 -0.035 -0.05" />
+                  <geom name="left_foot3_collision" class="foot_capsule" fromto="0.08 -0.04 -0.05 0.02 -0.04 -0.05" />
+                <geom pos="0 -0.035 -0.0385" quat="0.499998 -0.5 -0.5 -0.500002" type="mesh" rgba="1 0 0 1" mesh="hat_small" class="visual" />
+                  <geom pos="0 -0.035 -0.0385" quat="0.499998 -0.5 -0.5 -0.500002" type="mesh" rgba="0.301961 0.301961 0.301961 1" mesh="foot" contype="1" conaffinity="1" class="visual" />
+                </body>
+              <geom pos="0 0 0.02" quat="9.38184e-07 -0.707105 -9.38187e-07 -0.707108" type="mesh" rgba="1 0 0 1" mesh="ujoint" class="visual" />
+                <geom pos="0 0 0.02" quat="0.699512 -2.00452e-08 0.71462 -2.00452e-08" type="mesh" rgba="0.917647 0.917647 0.917647 1" mesh="spacer_ujoint" class="visual" />
+                <geom pos="0 0 0.0205" quat="9.38184e-07 -0.707105 -9.38187e-07 -0.707108" type="mesh" rgba="1 0 0 1" mesh="part_3" class="visual" />
+                <geom pos="0 0 0.0195" quat="9.38184e-07 0.707105 9.38187e-07 -0.707108" type="mesh" rgba="1 0 0 1" mesh="part_3" class="visual" />
+                <geom pos="0 5.64895e-06 0.02" quat="9.45034e-07 0.701906 -9.31284e-07 0.71227" type="mesh" rgba="0.917647 0.917647 0.917647 1" mesh="spacer_ujoint" class="visual" />
+                </body>
+            <geom pos="0 -0.26 0.067" quat="0.707105 -0.707108 0 0" type="mesh" rgba="1 0 0 1" mesh="tibias12_sym" class="visual" />
+              <geom pos="0.12299 -0.14568 0.0195" quat="0.632813 -0.632815 -0.31551 0.315509" type="mesh" rgba="0.917647 0.917647 0.917647 1" mesh="actuation_ankle" class="visual" />
+              <geom pos="0.470217 -0.113201 -0.006" quat="9.38184e-07 -9.38187e-07 0.707108 -0.707105" type="mesh" rgba="0.301961 0.301961 0.301961 1" mesh="rmdx43" class="visual" />
+              <geom pos="0.470217 -0.0457991 0.006" quat="9.38184e-07 9.38187e-07 -0.707108 -0.707105" type="mesh" rgba="0.301961 0.301961 0.301961 1" mesh="rmdx43" class="visual" />
+              <geom pos="0 -0.26 0.067" quat="0.707105 -0.707108 0 0" type="mesh" rgba="1 0 0 1" mesh="tibias22_sym" class="visual" />
+              <geom pos="-0.12299 -0.0133205 -0.0195" quat="0.632813 0.632815 0.31551 0.315509" type="mesh" rgba="0.917647 0.917647 0.917647 1" mesh="actuation_ankle" class="visual" />
+              </body>
+          <geom pos="-0.058 -0.280519 0.0295" quat="0.707105 -0.707108 0 0" type="mesh" rgba="0.917647 0.917647 0.917647 1" mesh="knee_rod22_sym" class="visual" />
+            <geom pos="0 0 -0.0938" quat="0.683011 0.183012 0.683014 -0.183013" type="mesh" rgba="1 0 0 1" mesh="part_3" class="visual" />
+            <geom pos="-0.17 -0.294449 0.0295" quat="0.683011 -0.683014 0.183013 -0.183012" type="mesh" rgba="1 0 0 1" mesh="femur_12_sym" contype="1" conaffinity="1" class="visual" />
+            <geom pos="-0.17 -0.294449 0.0295" quat="0.683011 -0.683014 0.183013 -0.183012" type="mesh" rgba="1 0 0 1" mesh="femur_22_sym" contype="1" conaffinity="1" class="visual" />
+            <geom pos="-0.17 -0.294449 -0.0305" quat="0.183014 0.183014 0.683014 0.683011" type="mesh" rgba="1 0 0 1" mesh="hat_femur" class="visual" />
+            <geom pos="0.655402 -0.194111 -0.0025" quat="0.183014 0.183014 0.683014 0.683011" type="mesh" rgba="0.301961 0.301961 0.301961 1" mesh="robstrideo3" class="visual" />
+            <geom pos="-0.058 -0.280519 0.0295" quat="0.707105 -0.707108 0 0" type="mesh" rgba="0.917647 0.917647 0.917647 1" mesh="knee_rod12_sym" class="visual" />
+            <geom pos="0.597402 -0.29457 -0.045" quat="0.183014 0.183014 0.683014 0.683011" type="mesh" rgba="0.301961 0.301961 0.301961 1" mesh="robstrideo3" class="visual" />
+            </body>
+        <geom quat="1.32679e-06 1 0 0" type="mesh" rgba="1 0 0 1" mesh="hipxy_sym" class="visual" />
+          </body>
+      <geom pos="-0.575896 0.057308 -0.20175" quat="0.603161 -0.792907 -0.068907 -0.0524169" type="mesh" rgba="0.301961 0.301961 0.301961 1" mesh="robstride02" class="visual" />
+        <geom pos="0 0 0.1" quat="1 0 0 0" type="mesh" rgba="1 0 0 1" mesh="hipz22_sym" class="visual" />
+        <geom pos="0 0 0.1" quat="1 0 0 0" type="mesh" rgba="1 0 0 1" mesh="hipz12_sym" class="visual" />
+        </body>
+    <geom pos="-0.000263039 0.233572 -0.0901625" quat="1.86697e-07 -1.31359e-06 0.99005 -0.140713" type="mesh" rgba="1 0 0 1" mesh="torso22" class="visual" />
+      <geom pos="0.672086 -0.147255 0.0629195" quat="0.00131867 -0.00114353 -0.655473 -0.755216" type="mesh" rgba="0.301961 0.301961 0.301961 1" mesh="robstrideo0" class="visual" />
+      <geom pos="0.672086 0.12555 0.0660044" quat="-0.00114353 0.00131866 0.755219 0.65547" type="mesh" rgba="0.301961 0.301961 0.301961 1" mesh="robstrideo0" class="visual" />
+      <geom pos="-0.000263039 4.05842e-07 -0.056966" quat="1.7604e-12 -1.32679e-06 -1 1.32679e-06" type="mesh" rgba="1 0 0 1" mesh="torso12" class="visual" />
+      <geom pos="-0.000263039 4.05842e-07 -0.056966" quat="1.76045e-12 -1.32679e-06 -1 1.32679e-06" type="mesh" rgba="1 0 0 1" mesh="torso22" class="visual" />
+      <geom pos="0.025 0.503548 0.0499987" quat="-1 2.65359e-06 0 0" type="mesh" rgba="0.301961 0.301961 0.301961 1" mesh="torso_meshe" class="visual" />
+      <geom pos="-0.0076156 0.0907452 0.254464" quat="0.851171 -0.218047 -0.443602 -0.176578" type="mesh" rgba="0.917647 0.917647 0.917647 1" mesh="shoulder1_part" class="visual" />
+      <geom pos="0.0145373 -0.0871188 0.209021" quat="-0.334809 -0.934655 0.0492556 0.109069" type="mesh" rgba="1 0 0 1" mesh="shoulder2_part" class="visual" />
+      <geom pos="-0.0554525 -0.19219 0.091955" quat="0.917449 -0.232744 -0.295007 0.130721" type="mesh" rgba="1 0 0 1" mesh="bearing_holder_upperbody" class="visual" />
+      <geom pos="0.661208 -0.206845 0.0660318" quat="0.111954 0.0422941 -0.424155 0.897647" type="mesh" rgba="0.301961 0.301961 0.301961 1" mesh="robstrideo0" class="visual" />
+      <geom pos="0.0106251 -0.0781302 0.265738" quat="-0.701282 -0.487793 -0.400684 0.33123" type="mesh" rgba="1 0 0 1" mesh="bearing_holder_upperbody" class="visual" />
+      <geom pos="0.638517 0.190397 0.409528" quat="0.308639 0.0960382 0.322747 -0.88958" type="mesh" rgba="0.301961 0.301961 0.301961 1" mesh="robstrideo0" class="visual" />
+      <geom pos="0.618605 0.0302519 0.629605" quat="-0.0263359 -0.439109 -0.252499 0.86182" type="mesh" rgba="0.301961 0.301961 0.301961 1" mesh="robstrideo0" class="visual" />
+      <geom pos="0.191349 0.165659 0.127061" quat="-0.919895 -0.159921 -0.298903 -0.197168" type="mesh" rgba="1 0 0 1" mesh="shoulder3_part" class="visual" />
+      <geom pos="0.16292 -0.199159 0.121232" quat="0.869203 -0.362747 -0.333087 0.0442065" type="mesh" rgba="0.917647 0.917647 0.917647 1" mesh="forarm_part" contype="1" conaffinity="1" class="visual" />
+      <geom pos="-0.0205428 4.05842e-07 0.036034" type="mesh" rgba="0.301961 0.301961 0.301961 1" mesh="torso_pperbody_part" class="visual" />
+      <geom pos="-0.512518 0.221543 -0.0634496" quat="0.86328 -0.349577 -0.136645 -0.337448" type="mesh" rgba="0.301961 0.301961 0.301961 1" mesh="robstrideo0" class="visual" />
+      <geom pos="-0.152959 0.177102 0.327008" quat="-0.295365 -0.95241 0.0361504 0.0660851" type="mesh" rgba="1 0 0 1" mesh="bearing_holder_upperbody" class="visual" />
+      <geom pos="-0.13659 -0.20345 0.321519" quat="-0.115457 -0.86686 -0.476209 -0.0919186" type="mesh" rgba="1 0 0 1" mesh="bearing_holder_upperbody" class="visual" />
+      <geom pos="-0.512518 -0.236795 -0.0477038" quat="0.349578 -0.86328 -0.337447 -0.136647" type="mesh" rgba="0.301961 0.301961 0.301961 1" mesh="robstrideo0" class="visual" />
+      <geom pos="0.19151 0.165136 0.126814" quat="0.245188 -0.920275 -0.0658203 -0.29773" type="mesh" rgba="0.917647 0.917647 0.917647 1" mesh="forarm_part" contype="1" conaffinity="1" class="visual" />
+      <geom pos="-0.0081211 -0.0903541 0.254198" quat="0.526276 -0.126652 -0.477796 0.691884" type="mesh" rgba="0.917647 0.917647 0.917647 1" mesh="shoulder1_part" class="visual" />
+      <geom pos="0.0195125 0.0908249 0.211616" quat="0.409445 -0.910691 -0.0526885 0.0148801" type="mesh" rgba="1 0 0 1" mesh="shoulder2_part" class="visual" />
+      <geom pos="-0.0221684 0.208312 0.092862" quat="-0.784041 -0.472423 0.392143 0.0912162" type="mesh" rgba="1 0 0 1" mesh="bearing_holder_upperbody" class="visual" />
+      <geom pos="0.684943 0.191653 0.212052" quat="0.0267337 -0.0477762 0.933477 -0.354434" type="mesh" rgba="0.301961 0.301961 0.301961 1" mesh="robstrideo0" class="visual" />
+      <geom pos="0.0103952 0.034758 0.220905" quat="-0.211501 -0.845919 -0.475646 -0.115976" type="mesh" rgba="1 0 0 1" mesh="bearing_holder_upperbody" class="visual" />
+      <geom pos="0.567118 -0.136803 0.605168" quat="-0.221379 -0.346594 -0.824721 0.3882" type="mesh" rgba="0.301961 0.301961 0.301961 1" mesh="robstrideo0" class="visual" />
+      <geom pos="-0.347256 -0.40216 -0.26853" quat="0.869203 -0.362747 -0.333087 0.0442065" type="mesh" rgba="0.301961 0.301961 0.301961 1" mesh="robstrideo0" class="visual" />
+      <geom pos="0.162821 -0.199599 0.121628" quat="-0.287759 -0.850148 0.22524 0.379092" type="mesh" rgba="1 0 0 1" mesh="shoulder3_part" class="visual" />
+      </body>
+  </worldbody>
+
+  <contact>
+    <exclude body1="base" body2="right_hip_x_link" />
+    <exclude body1="base" body2="left_hip_x_link" />
+  </contact>
+
+  <sensor>
+    <gyro name="imu_ang_vel" site="imu_in_base" />
+    <velocimeter name="imu_lin_vel" site="imu_in_base" />
+    <accelerometer name="imu_lin_acc" site="imu_in_base" />
+    <subtreeangmom name="root_angmom" body="base" />
+  </sensor>
+</mujoco>
