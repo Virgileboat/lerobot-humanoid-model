@@ -68,8 +68,8 @@
       <!-- Part hex_socket_head_cap_screw_m4x0_70_x_20__832e47d784177ea3f1dabbaab534416e_15 -->
       <!-- Part hex_socket_head_cap_screw_m4x0_70_x_20__832e47d784177ea3f1dabbaab534416e_16 -->
       <!-- Part hex_socket_head_cap_screw_m3x0_50_x_8__d566997e1880d7fd3377c5b0ee12206c_12 -->
-      <!-- Frame torso -->
-      <site group="3" name="torso" pos="1.28979e-17 1.37152e-17 -3.20924e-17" quat="1 -0 2.44249e-15 -0"/>
+      <!-- Frame imu -->
+      <site group="3" name="imu" pos="1.28979e-17 1.37152e-17 -3.20924e-17" quat="1 -0 2.44249e-15 -0"/>
       <!-- Link hipx_subassembly -->
       <body name="hipx_subassembly" pos="-0.000819037 -0.133159 0.04164" quat="0.821908 0.0571233 0.0414078 -0.565234">
         <!-- Joint from torso_subassembly to hipx_subassembly -->
@@ -389,7 +389,7 @@
                   <!-- Part hex_socket_head_cap_screw_m2_5x0_45_x_6__ec244025d76f8b83b2775022a2cb3232_15 -->
                   <!-- Part foot -->
                   <geom type="mesh" class="visual" pos="1.11022e-16 -0.035 -0.0385" quat="0.5 -0.5 -0.5 -0.5" mesh="foot" material="foot_material"/>
-                  <geom type="mesh" class="collision" pos="1.11022e-16 -0.035 -0.0385" quat="0.5 -0.5 -0.5 -0.5" mesh="foot" material="foot_material"/>
+                  <geom type="mesh" name="right_foot_collision" class="collision" pos="1.11022e-16 -0.035 -0.0385" quat="0.5 -0.5 -0.5 -0.5" mesh="foot" material="foot_material"/>
                   <!-- Frame foot_right -->
                   <site group="3" name="foot_right" pos="-6.35351e-08 -0.035 -0.0480606" quat="0.5 -0.5 0.5 0.5"/>
                 </body>
@@ -717,7 +717,7 @@
                   <!-- Part hex_socket_head_cap_screw_m2_5x0_45_x_6__ec244025d76f8b83b2775022a2cb3232_30 -->
                   <!-- Part foot_2 -->
                   <geom type="mesh" class="visual" pos="1.249e-16 -0.035 -0.0385" quat="0.5 -0.5 -0.5 -0.5" mesh="foot" material="foot_material"/>
-                  <geom type="mesh" class="collision" pos="1.249e-16 -0.035 -0.0385" quat="0.5 -0.5 -0.5 -0.5" mesh="foot" material="foot_material"/>
+                  <geom type="mesh" class="collision" name="left_foot_collision" pos="1.249e-16 -0.035 -0.0385" quat="0.5 -0.5 -0.5 -0.5" mesh="foot" material="foot_material"/>
                   <!-- Frame foot_left -->
                   <site group="3" name="foot_left" pos="-6.35351e-08 -0.035 -0.0480606" quat="0.5 -0.5 0.5 0.5"/>
                 </body>
@@ -846,19 +846,16 @@
     <material name="tibias22_sym_material" rgba="1 0 0 1"/>
     <material name="torso_meshe_material" rgba="0.301961 0.301961 0.301961 1"/>
   </asset>
-  <actuator>
-    <position class="mjcf" name="hipz_right" joint="hipz_right"/>
-    <position class="mjcf" name="hipx_right" joint="hipx_right"/>
-    <position class="mjcf" name="hipy_right" joint="hipy_right"/>
-    <position class="mjcf" name="knee_right" joint="knee_right"/>
-    <position class="mjcf" name="ankley_right" joint="ankley_right"/>
-    <position class="mjcf" name="anklex_right" joint="anklex_right"/>
-    <position class="mjcf" name="hipz_left" joint="hipz_left"/>
-    <position class="mjcf" name="hipx_left" joint="hipx_left"/>
-    <position class="mjcf" name="hipy_left" joint="hipy_left"/>
-    <position class="mjcf" name="knee_left" joint="knee_left"/>
-    <position class="mjcf" name="ankley_left" joint="ankley_left"/>
-    <position class="mjcf" name="anklex_left" joint="anklex_left"/>
-  </actuator>
   <equality/>
+
+
+    <sensor>
+    <gyro name="imu_ang_vel" site="imu"/>
+    <velocimeter name="imu_lin_vel" site="imu"/>
+    <accelerometer name="imu_lin_acc" site="imu"/>
+    <subtreeangmom name="root_angmom" body="torso_meshe"/>
+    </sensor>
+  
+  
+
 </mujoco>
