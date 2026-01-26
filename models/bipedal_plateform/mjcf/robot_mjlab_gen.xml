@@ -72,7 +72,7 @@
       <camera name="tracking" pos="1.734 -1.135 .35" xyaxes="0.552 0.834 -0.000 -0.170 0.112 0.979" mode="trackcom"/>
 
       <!-- Give the floating base a reasonable inertial (optional but recommended) -->
-      <inertial pos="0 0 0" mass="5.0" diaginertia="0.05 0.05 0.02"/>
+      <inertial pos="0 0 0" mass="3.7" diaginertia="0.0195228 0.00129235 0.0197822" />
       <freejoint name="floating_base_joint"/>
 
       <!-- ===== Visuals (converted to class="visual") ===== -->
@@ -257,6 +257,5 @@
     <gyro name="imu_ang_vel" site="imu_in_base"/>
     <velocimeter name="imu_lin_vel" site="imu_in_base"/>
     <accelerometer name="imu_lin_acc" site="imu_in_base"/>
-    <subtreeangmom name="root_angmom" body="base"/>
   </sensor>
 </mujoco>
