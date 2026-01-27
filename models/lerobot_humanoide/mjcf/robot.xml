@@ -17,7 +17,7 @@
   </default>
   <worldbody>
     <!-- Link torso_subassembly -->
-    <body name="torso_subassembly" pos="0 0 0.77" quat="1 0 0 0" childclass="mjcf">
+    <body name="torso_subassembly" pos="0 0 0.82" quat="1 0 0 0" childclass="mjcf">
       <freejoint name="torso_subassembly_freejoint"/>
       <inertial pos="-0.000697254 4.08729e-07 0.0361785" mass="1.37455" fullinertia="0.0195228 0.00129235 0.0197822 -3.0234e-10 1.40229e-06 1.22091e-10"/>
       <!-- Part rs00 -->
@@ -387,7 +387,7 @@
                   <!-- Part hex_socket_head_cap_screw_m2_5x0_45_x_6__ec244025d76f8b83b2775022a2cb3232_15 -->
                   <!-- Part foot -->
                   <geom type="mesh" class="visual" pos="1.11022e-16 -0.035 -0.0385" quat="0.5 -0.5 -0.5 -0.5" mesh="foot" material="foot_material"/>
-                  <geom type="box" size="0.12 0.05 0.02" name="right_foot_collision" class="collision" pos="1.11022e-16 -0.035 -0.0385" quat="0.5 -0.5 -0.5 -0.5"/>
+                  <geom type="mesh" size="0.12 0.05 0.02" name="right_foot_collision" class="collision" pos="1.11022e-16 -0.035 -0.0385" quat="0.5 -0.5 -0.5 -0.5"/>
                   <!-- Frame foot_right -->
                   <site group="3" name="foot_right" pos="-6.35351e-08 -0.035 -0.0480606" quat="0.5 -0.5 0.5 0.5"/>
                 </body>
@@ -715,7 +715,7 @@
                   <!-- Part hex_socket_head_cap_screw_m2_5x0_45_x_6__ec244025d76f8b83b2775022a2cb3232_30 -->
                   <!-- Part foot_2 -->
                   <geom type="mesh" class="visual" pos="1.11022e-16 -0.035 -0.0385" quat="0.5 -0.5 -0.5 -0.5" mesh="foot" material="foot_material"/>
-                  <geom type="box" size="0.12 0.05 0.02" name="left_foot_collision" class="collision" pos="1.11022e-16 -0.035 -0.0385" quat="0.5 -0.5 -0.5 -0.5"/>
+                  <geom type="mesh" size="0.12 0.05 0.02" name="left_foot_collision" class="collision" pos="1.11022e-16 -0.035 -0.0385" quat="0.5 -0.5 -0.5 -0.5"/>
                   <!-- Frame foot_left -->
                   <site group="3" name="foot_left" pos="-6.35351e-08 -0.035 -0.0480606" quat="0.5 -0.5 0.5 0.5"/>
                 </body>
