@@ -4,7 +4,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 
 stop
-xml_path="models/bipedal_plateform/mjcf/scene.xml"
+xml_path="models/bipedal_plateform_no_arms/mjcf/scene.xml"
+xml_path="models/lerobot_humanoide/mjcf/scene.xml"
 
 # xml_path="scene.xml"
 

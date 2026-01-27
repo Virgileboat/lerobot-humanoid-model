@@ -17,7 +17,7 @@
   </default>
   <worldbody>
     <!-- Link torso_subassembly -->
-    <body name="torso_subassembly" pos="0 0 0" quat="1 0 0 0" childclass="mjcf">
+    <body name="torso_subassembly" pos="0 0 0.72" quat="1 0 0 0" childclass="mjcf">
       <freejoint name="torso_subassembly_freejoint"/>
       <inertial pos="-0.000668828 4.08197e-07 0.0384522" mass="1.68455" fullinertia="0.0196473 0.00141686 0.0199217 -3.02227e-10 9.19521e-07 1.31114e-10"/>
       <!-- Part robstrideo0 -->
