@@ -252,7 +252,7 @@
             <inertial pos="0.0149636 -0.0259177 0.001" mass="0.00458484" fullinertia="4.27206e-06 1.44e-06 5.70887e-06 2.45264e-06 -7.21799e-20 -4.60999e-20"/>
             <!-- Part foot -->
             <geom type="mesh" class="visual" pos="-0.0887676 -0.05125 0.002" quat="5.93819e-15 0.5 0.866025 -6.16466e-15" mesh="foot" material="foot_material"/>
-            <geom name="left_foot_collision" class="collision" type="capsule" size="0.012" fromto="0 0 0 0.05025 -0.0870356 0.001"/>
+            <geom name="left_foot_collision" class="collision" type="capsule" size="0.012" fromto="0 0 0 0.04525025 -0.07837577 0.0009005"/>
             <!-- Part tibia -->
             <geom type="mesh" class="visual" pos="-0.0887676 -0.05125 0.002" quat="2.66497e-15 0.5 0.866025 -5.54692e-15" mesh="tibia" material="tibia_material"/>
             <!-- Frame left_foot -->
@@ -413,7 +413,7 @@
             <geom type="mesh" class="visual" pos="-0.0887676 -0.05125 -0.002" quat="0.866025 1.48266e-17 6.91701e-17 -0.5" mesh="tibia" material="tibia_material"/>
             <!-- Part foot_2 -->
             <geom type="mesh" class="visual" pos="0.0887676 0.05125 6.93889e-18" quat="6.85265e-17 0.866025 -0.5 -7.757e-17" mesh="foot" material="foot_material"/>
-            <geom name="right_foot_collision" class="collision" type="capsule" size="0.012" fromto="0 0 0 -0.05025 0.0870356 -0.001"/>
+            <geom name="right_foot_collision" class="collision" type="capsule" size="0.012" fromto="0 0 0 -0.04525025 0.07837577 -0.0009005"/>
             <!-- Frame right_foot -->
             <site group="3" name="right_foot" pos="-0.05025 0.0870356 -0.001" quat="1.48266e-17 -0.866025 0.5 1.05343e-16"/>
             <!-- Link rod_2 -->
