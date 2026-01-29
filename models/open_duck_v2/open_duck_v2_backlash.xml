@@ -39,6 +39,7 @@
     <framexaxis objtype="site" objname="right_foot" name="right_foot_upvector"/>
     <framepos objtype="site" objname="left_foot" name="left_foot_pos"/>
     <framepos objtype="site" objname="right_foot" name="right_foot_pos"/>
+    <subtreeangmom name="root_angmom" body="trunk_assembly"/>
   </sensor>
   <!-- Additional joints_properties.xml -->
   <default>
